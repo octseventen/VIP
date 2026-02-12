@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO="https://adijayavpn.my.id/"
+REPO="https://raw.githubusercontent.com/octseventen/VIP/main/"
 apt install rclone
 printf "q\n" | rclone config
 wget -O /root/.config/rclone/rclone.conf "${REPO}install/rclone.conf"
