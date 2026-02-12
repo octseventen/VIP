@@ -4,7 +4,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 echo "Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip | grep $MYIP | awk '{print $4}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/octseventen/izin-script/main/ip | grep $MYIP | awk '{print $3}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Pasang
@@ -94,7 +94,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "1 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/octseventen/izin-script/main/ip >/dev/null 2>&1
 echo "### $author $hhari $MYIP @trial" >> ip
 sleep 1
 git config --global user.email "${EMAILGIT}" >/dev/null 2>&1
@@ -138,7 +138,7 @@ USERGIT=$(cat /etc/github/username)
 hhari=$(date -d "30 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/octseventen/izin-script/main/ip >/dev/null 2>&1
 
 echo "### $author $hhari $MYIP @VIP" >> ip
 
@@ -171,7 +171,7 @@ USERGIT=$(cat /etc/github/username)
 hhari2=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/octseventen/izin-script/main/ip >/dev/null 2>&1
 
 sed -i "/# KONTOL/a ### ${author2} ${hhari2} ${MYIP2} ON 10 KONTOL" /root/listip/ip
 
@@ -204,7 +204,7 @@ USERGIT=$(cat /etc/github/username)
 hhari3=$(date -d "999 days" +"%Y-%m-%d")
 mkdir /root/listip
 cd /root/listip
-wget https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip >/dev/null 2>&1
+wget https://raw.githubusercontent.com/octseventen/izin-script/main/ip >/dev/null 2>&1
 
 sed -i "/# MEMEK/a ### ${author3} ${hhari3} ${MYIP3} ON 999" /root/listip/ip
 
@@ -256,7 +256,7 @@ fun_bar() {
     tput cnorm
 }
 res1() {
-wget https://adijayavpn.my.id/install/pointing.sh && chmod +x pointing.sh && ./pointing.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/install/pointing.sh && chmod +x pointing.sh && ./pointing.sh
 clear
 }
 clear
@@ -572,42 +572,42 @@ fun_bar() {
 
 
 res2() {
-wget https://adijayavpn.my.id/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/install/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 clear
 } 
 
 res3() {
-wget https://adijayavpn.my.id/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/install/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 clear
 }
 
 res4() {
-wget https://adijayavpn.my.id/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/sshws/insshws.sh && chmod +x insshws.sh && ./insshws.sh
 clear
 }
 
 res5() {
-wget https://adijayavpn.my.id/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/install/set-br.sh && chmod +x set-br.sh && ./set-br.sh
 clear
 }
 
 res6() {
-wget https://adijayavpn.my.id/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/sshws/ohp.sh && chmod +x ohp.sh && ./ohp.sh
 clear
 }
 
 res7() {
-wget https://adijayavpn.my.id/menu/update.sh && chmod +x update.sh && ./update.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/menu/update.sh && chmod +x update.sh && ./update.sh
 clear
 }
 
 res8() {
-wget https://adijayavpn.my.id/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/slowdns/installsl.sh && chmod +x installsl.sh && bash installsl.sh
 clear
 }
 
 res9() {
-wget https://adijayavpn.my.id/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
+wget https://raw.githubusercontent.com/octseventen/VIP/main/install/udp-custom.sh && chmod +x udp-custom.sh && bash udp-custom.sh
 clear
 }
 if [[ $(cat /etc/os-release | grep -w ID | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/ID//g') == "ubuntu" ]]; then
@@ -717,7 +717,7 @@ TIME=$(date +'%Y-%m-%d %H:%M:%S')
 RAMMS=$(free -m | awk 'NR==2 {print $2}')
 MODEL2=$(cat /etc/os-release | grep -w PRETTY_NAME | head -n1 | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g')
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS https://raw.githubusercontent.com/AdijayaTunneling/ip/main/ip | grep $MYIP | awk '{print $3}' )
+IZIN=$(curl -sS https://raw.githubusercontent.com/octseventen/izin-script/main/ip | grep $MYIP | awk '{print $3}' )
 d1=$(date -d "$IZIN" +%s)
 d2=$(date -d "$today" +%s)
 EXP=$(( (d1 - d2) / 86400 ))
@@ -736,7 +736,7 @@ TEXT="
 <code>EXP SCRIPT : </code><code>$EXP Days</code>
 <code>━━━━━━━━━━━━━━━━━━━━</code>
 <i> Notifikasi Installer Script...</i>
-"'&reply_markup={"inline_keyboard":[[{"text":"🔥ᴏʀᴅᴇʀ","url":"https://t.me/AdijayaStoreVpn"},{"text":"🔥GRUP","url":"https://t.me/configAdijaya"}]]}'
+"'&reply_markup={"inline_keyboard":[[{"text":"🔥ᴏʀᴅᴇʀ","url":"https://t.me/lordfreedom"},{"text":"🔥GRUP","url":"https://t.me/pradya_store"}]]}'
 curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
 clear
 }
