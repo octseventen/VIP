@@ -1,5 +1,5 @@
 #!/bin/sh
-REPOS="https://adijayavpn.my.id/"
+REPOS="https://raw.githubusercontent.com/octseventen/VIP/main/"
 ns_domain_cloudflare() {
 	DOMAIN=$(cat /etc/xray/domain | cut -d "." -f2-4)
 	DOMAIN_PATH=$(cat /etc/xray/domain)
