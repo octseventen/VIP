@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO="https://adijayavpn.my.id/"
+REPO="https://raw.githubusercontent.com/octseventen/VIP/main/"
 wget -q -O /usr/bin/limit-ip "${REPO}install/limit-ip"
 chmod +x /usr/bin/*
 cd /usr/bin
