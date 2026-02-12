@@ -150,8 +150,8 @@ git init >/dev/null 2>&1
 git add ip 
 git commit -m register >/dev/null 2>&1
 git branch -M main >/dev/null 2>&1
-git remote add origin https://github.com/${USERGIT}/izin >/dev/null 2>&1
-git push -f https://${APIGIT}@github.com/${USERGIT}/izin >/dev/null 2>&1
+git remote add origin https://github.com/${USERGIT}/izin-script >/dev/null 2>&1
+git push -f https://${APIGIT}@github.com/${USERGIT}/izin-script >/dev/null 2>&1
 sleep 0.5
 cd
 rm -rf /root/listip
