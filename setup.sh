@@ -4,7 +4,7 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 echo "Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IPVPS=$(curl -sS https://raw.githubusercontent.com/octseventen/izin-script/main/ip | grep $MYIP | awk '{print $3}')
+IPVPS=$(curl -sS https://raw.githubusercontent.com/octseventen/izin-script/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Pasang
@@ -517,7 +517,7 @@ lightcyan
 EOF
 function Pasang(){
 cd
-wget https://adijayavpn.my.id/tools.sh &> /dev/null
+wget https://raw.githubusercontent.com/octseventen/VIP/main/tools.sh &> /dev/null
 chmod +x tools.sh 
 bash tools.sh
 clear
@@ -706,9 +706,9 @@ res9
 }
 function iinfo(){
 domain=$(cat /etc/xray/domain)
-TIMES="10"
-CHATID="6924645951"
-KEY="7556091175:AAGnyeEfaszncocBIkAB_kviN1adUpNJxGw"
+CHATID="944278308"
+KEY="7573098689:AAEKTLuIrtHmpOM4uSLdU-O2NnWUamj-uOs"
+TIME="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 ISP=$(cat /etc/xray/isp)
 CITY=$(cat /etc/xray/city)
