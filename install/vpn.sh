@@ -4,7 +4,7 @@
 # By NEWBIE VPN 
 # ==================================================
 # Link Hosting Kalian
-REPO="https://adijayavpn.my.id/"
+REPO="https://raw.githubusercontent.com/octseventen/VIP/main/"
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
