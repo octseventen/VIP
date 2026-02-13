@@ -47,7 +47,7 @@ echo "Installation time : $(( ${1} / 3600 )) hours $(( (${1} / 60) % 60 )) minut
 }
 mkdir -p /etc/xray
 mkdir -p /var/lib/ >/dev/null 2>&1
-echo "IP=" >> /var/lib/ipvps.conf
+echo "IP=" >> /var/lib/kyt/ipvps.conf
 clear
 echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
 echo -e  "${berem}│\e[92;1m              MASUKKAN NAMA KAMU          \033[96;1m│${NC}"
