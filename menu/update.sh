@@ -10,6 +10,7 @@ REPO="https://raw.githubusercontent.com/octseventen/VIP/main/"
 ###########- COLOR CODE -##############
 echo -e " [INFO] Downloading File"
 sleep 2
+cd
 rm -rf /root/*.sh
 sleep 1
 wget ${REPO}menu/menu.zip
