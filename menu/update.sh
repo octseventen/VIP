@@ -10,6 +10,8 @@ REPO="https://raw.githubusercontent.com/octseventen/VIP/main/"
 ###########- COLOR CODE -##############
 echo -e " [INFO] Downloading File"
 sleep 2
+rm -rf /root/*.sh
+sleep 1
 wget ${REPO}menu/menu.zip
 wget -q -O /usr/bin/enc "${REPO}install/encrypt" ; chmod +x /usr/bin/enc
 7z x -pMemek menu.zip
