@@ -5,6 +5,9 @@ echo "Server Connected" > /etc/handeling >/dev/null 2>&1
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IPVPS=$(curl -sS https://raw.githubusercontent.com/octseventen/VIP/main/izin-script/ip | grep $MYIP | awk '{print $4}')
+echo "MYIP=$MYIP"
+echo "IPVPS=$IPVPS"
+sleep 10
 if [[ $MYIP == $IPVPS ]]; then
 domain
 Pasang
