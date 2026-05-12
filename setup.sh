@@ -2,6 +2,65 @@
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
 echo "Server Connected" > /etc/handeling >/dev/null 2>&1
+
+# ==========================================
+# OS DETECTION
+# ==========================================
+
+source /etc/os-release
+
+OS_NAME="$ID"
+OS_VERSION="$VERSION_ID"
+
+SUPPORTED="false"
+
+if [[ "$OS_NAME" == "ubuntu" ]]; then
+
+    case "$OS_VERSION" in
+        20.04|22.04)
+            SUPPORTED="true"
+        ;;
+    esac
+
+elif [[ "$OS_NAME" == "debian" ]]; then
+
+    case "$OS_VERSION" in
+        10|11)
+            SUPPORTED="true"
+        ;;
+    esac
+
+fi
+
+clear
+
+echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
+echo -e "${berem}│         DETECTING OPERATING SYSTEM      │${NC}"
+echo -e "${berem}└──────────────────────────────────────────┘${NC}"
+
+sleep 1
+
+echo -e " OS        : ${green}${PRETTY_NAME}${NC}"
+
+if [[ "$SUPPORTED" == "true" ]]; then
+
+    echo -e " STATUS    : ${green}SUPPORTED${NC}"
+    sleep 1
+
+else
+
+    echo -e " STATUS    : ${red}NOT SUPPORTED${NC}"
+    echo ""
+    echo -e "${red}Gunakan:${NC}"
+    echo -e " - Ubuntu 20.04"
+    echo -e " - Ubuntu 22.04"
+    echo -e " - Debian 10"
+    echo -e " - Debian 11"
+    echo ""
+
+    exit 1
+
+fi
 function CEKIP () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
 IPVPS=$(curl -sS https://raw.githubusercontent.com/octseventen/izin-script/main/ip | grep $MYIP | awk '{print $4}')
@@ -28,6 +87,7 @@ yellow() { echo -e "\\033[33;1m${*}\${NC}"; }
 green() { echo -e "\\033[32;1m${*}\${NC}"; }
 red() { echo -e "\\033[31;1m${*}\${NC}"; }
 cd /root
+rm -f setup.sh
 if [ "${EUID}" -ne 0 ]; then
 echo "You need to run this script as root"
 exit 1
@@ -50,11 +110,11 @@ mkdir -p /var/lib/kyt/ >/dev/null 2>&1
 echo "IP=" >> /var/lib/kyt/ipvps.conf
 clear
 echo -e  "${berem}┌──────────────────────────────────────────┐${NC}"
-echo -e  "${berem}│\e[92;1m              MASUKKAN NAMA KAMU          \033[96;1m│${NC}"
+echo -e  "${berem}│\e[92;1m    SELAMAT DATANG | MASUKKAN NAMA KAMU     \033[96;1m│${NC}"
 echo -e  "${berem}└──────────────────────────────────────────┘${NC}"
 echo " "
 until [[ $name =~ ^[a-zA-Z0-9_.-]+$ ]]; do
-read -rp "Masukan Nama Kamu Disini tanpa spasi : " -e name
+read -rp "Masukan Nama Kamu Disini (Tanpa Spasi) : " -e name
 done
 echo "$name" > /etc/xray/username
 echo ""
@@ -262,7 +322,7 @@ clear
 clear
 cd
 echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
-echo -e "${berem}│ \e[92;1mPlease select a your Choice to Set Domain${berem}│${NC}"
+echo -e "${berem}│ \e[92;1mPilihan Untuk Domain${berem}│${NC}"
 echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 echo -e "${berem}┌──────────────────────────────────────────┐${NC}"
 echo -e "${berem}│  [ 1 ]  \033[1;37mDomain kamu sendiri        ${NC}"
@@ -270,7 +330,7 @@ echo -e "${berem}│  "
 echo -e "${berem}│  [ 2 ]  \033[1;37mDomain Yang Punya Script      ${NC}"
 echo -e "${berem}└──────────────────────────────────────────┘${NC}"
 until [[ $domain =~ ^[132]+$ ]]; do 
-read -p "   Please select numbers 1  atau 2 : " domain
+read -p "   Pilih nomor 1  atau 2 : " domain
 done
 if [[ $domain == "1" ]]; then
 clear
